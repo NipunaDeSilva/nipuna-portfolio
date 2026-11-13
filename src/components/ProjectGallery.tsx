@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 type GalleryImage = {
     image: string;
@@ -29,7 +30,7 @@ export default function ProjectGallery({
                     >
                         <div className="relative h-64 bg-gray-100">
                             <Image
-                                src={item.image}
+                                src={assetPath(item.image)}
                                 alt={item.caption}
                                 fill
                                 unoptimized

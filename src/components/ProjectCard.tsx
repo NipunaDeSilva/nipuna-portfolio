@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 type ProjectCardProps = {
     title: string;
@@ -27,7 +28,7 @@ export default function ProjectCard({
             {/* Project Image */}
             <div className="relative h-56 overflow-hidden bg-gray-100">
                 <Image
-                    src={image}
+                    src={assetPath(image)}
                     alt={`${title} project screenshot`}
                     fill
                     unoptimized

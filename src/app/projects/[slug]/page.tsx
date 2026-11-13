@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/components/projects";
 import ProjectGallery from "@/components/ProjectGallery";
+import { assetPath } from "@/lib/assetPath";
 
 type ProjectPageProps = {
     params: Promise<{
@@ -69,7 +70,7 @@ export default async function ProjectPage({
                 {/* Main Screenshot */}
                 <div className="relative mt-10 h-64 overflow-hidden rounded-2xl bg-gray-100 sm:h-[420px]">
                     <Image
-                        src={project.image}
+                        src={assetPath(project.image)}
                         alt={`${project.title} screenshot`}
                         fill
                         unoptimized
